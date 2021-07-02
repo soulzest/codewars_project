@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
+                "html:target/cucumber-report.html",
                 "json:target/cucumber.json",
-                "html:target/cucumber/",
-                "junit:target/junit/junit-report.xml",
-                "rerun:target/rerun.txt"},
+                "rerun:target/rerun.txt",
+        "pretty" },
         features = "src/test/resources/features",
         glue="cwp/codewars/step_definitions",
        // dryRun = false,

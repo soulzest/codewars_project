@@ -5,6 +5,7 @@ import static org.junit.Assert.fail;
 
 
 import cwp.codewars.utilities.Driver;
+import cwp.codewars.utilities.waits;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
@@ -87,7 +88,10 @@ public class Login1 {
     }
     @When("user picks Java for training")
     public void user_picks_for_training() {
+        waits waits = new waits();
+
         WebElement javaIcon=Driver.getDriver().findElement(By.xpath("//i[@class='icon-moon-java ']"));
+        waits.waitForStaleElement(javaIcon);
         javaIcon.click();
     }
 
