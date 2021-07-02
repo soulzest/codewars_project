@@ -1,5 +1,6 @@
 package cwp.codewars.utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -33,6 +34,16 @@ public class waits {
                     }
                 }
         }
+    }
+
+    /**
+     * Clicks on an element using JavaScript
+     *
+     * @param element
+     */
+    public void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
 
 }

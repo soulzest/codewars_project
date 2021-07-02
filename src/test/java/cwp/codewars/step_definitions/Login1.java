@@ -116,9 +116,13 @@ public class Login1 {
         trainingIcon.click();
         Thread.sleep(2000);
 
-        WebElement javaIcon=Driver.getDriver().findElement(By.xpath("//i[@class='icon-moon-java ']"));
-        javaIcon.click();
-        Thread.sleep(2000);
+        try{
+            WebElement javaIcon = Driver.getDriver().findElement(By.xpath("//i[@class='icon-moon-java ']"));
+            javaIcon.click();
+            Thread.sleep(2000);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
 
         WebElement saveButton=Driver.getDriver().findElement(By.xpath("//a[@class='btn mt-4 js-save']"));
         saveButton.click();

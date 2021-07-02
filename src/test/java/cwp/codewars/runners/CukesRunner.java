@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
         plugin = {
                 "html:target/cucumber-report.html",
                 "json:target/cucumber.json",
-                "rerun:target/rerun.txt",
-        "pretty" },
+                "rerun:target/rerun.txt"},
+        //"pretty" },
         features = "src/test/resources/features",
         glue="cwp/codewars/step_definitions",
        // dryRun = false,
-        tags="@Admin"
+        tags="@test3"
 )
 
 public class CukesRunner {
